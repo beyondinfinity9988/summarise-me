@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative AI Text Summarizer</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h1 style="font-family: cursive;">SummariseMe : </h1><h2 style="font-family: monospace;">Generative AI Text Summarizer</h2><br>
+        <form class="input-section">
+            <label for="sourceModel">Select Model Type:</label>
+            <select id="sourceModel" name="sourceModel">
+                <option value="bart">Any</option>
+                <option value="bart">Facebook-Bart</option>
+                <!-- <option value="pegasus">Google-Pegasus</option> -->
+            </select>
+            <label for="sourceType">Select Source Type:</label>
+            <select id="sourceType" name="sourceType">
+                <option value="select">Select</option>
+                <option value="youtube">YouTube Video Link</option>
+                <option value="pdf">PDF Document</option>
+                <option value="text">Long Text</option>
+            </select>
+            <div id="inputFields">
+                <!-- Input fields based on source type will be dynamically added here -->
+            </div>
+            <button id="generateSummaryBtn">Generate Summary</button>
+            <div id="processingAnimation" class="hidden">
+                <div class="spinner-container">
+                    <div class="spinner"></div>
+                  </div>
+                <p>Processing... wait for few minutes</p>
+              </div>
+        </form>
+        <div class="output-section">
+            <h2>Summary:</h2>
+            <div id="summaryResult" aria-placeholder="Summary Goes Here">>> {{summary}}</div>
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
